@@ -21,7 +21,9 @@ Thesis RAG Assistant is a search and RAG assistant for personal thesis paper col
 
 - [Demo Quick Start](#demo-quick-start)
 - [Configure LLM](#configure-llm)
+- [LLM Configuration Examples](#llm-configuration-examples)
 - [Use Your Own Corpus](#use-your-own-corpus)
+- [Corpus Configuration Examples](#corpus-configuration-examples)
 - [Common Commands](#common-commands)
 
 ## Demo Quick Start
@@ -51,6 +53,51 @@ ollama pull <your-model-name>
 ollama list
 ```
 
+## LLM Configuration Examples
+
+`configure_llm.ps1` is an interactive wizard. Enter the model name exactly as shown by `ollama list` or by your API provider.
+
+### Ollama Example
+
+```text
+profile name: local_ollama
+provider: ollama
+Ollama Base URL: http://localhost:11434
+Ollama Model: [your-model-name]
+temperature: 0.2
+num_ctx: 4096
+num_predict: 1200
+confirm: YES
+```
+
+| Field | What to enter |
+| --- | --- |
+| profile name | A local profile name, such as `local_ollama` |
+| Ollama Base URL | Usually `http://localhost:11434` on the same machine |
+| Ollama Model | The model name shown by `ollama list` |
+| temperature | Generation randomness, commonly `0.2` |
+| num_ctx / num_predict | Context size and response length limit |
+
+### API Example
+
+```text
+profile name: api_llm
+provider: api
+API Base URL: [your-api-base-url]
+API Model: [your-model-name]
+API Key: [your-api-key]
+temperature: 0.2
+max_tokens: 2000
+confirm: YES
+```
+
+| Field | What to enter |
+| --- | --- |
+| API Base URL | The OpenAI-compatible endpoint from your provider |
+| API Model | The model name from your provider |
+| API Key | Your local API key; the wizard hides the input |
+| max_tokens | Maximum tokens for one answer |
+
 ## Use Your Own Corpus
 
 Run the internal corpus wizard:
@@ -65,6 +112,25 @@ The wizard asks for a profile name, PDF root, and language. Different profiles c
 ```powershell
 .\scripts\run_internal.ps1 -Profile <profile_name>
 ```
+
+## Corpus Configuration Examples
+
+`configure_internal.ps1` creates a separate local corpus workspace for each profile.
+
+```text
+profile name: my_corpus
+PDF root: C:\path\to\pdfs
+language: ja
+work dir mode: project-local runtime workspace
+confirm: YES
+```
+
+| Field | What to enter |
+| --- | --- |
+| profile name | A corpus name, such as `my_corpus` |
+| PDF root | The folder that contains your PDF files |
+| language | Main paper language, such as `ja`, `zh`, or `en` |
+| work dir mode | The default project workspace: `.runtime/internal/corpora/[profile_name]` |
 
 ## Common Commands
 
@@ -84,4 +150,3 @@ The wizard asks for a profile name, PDF root, and language. Different profiles c
 # Run your corpus UI
 .\scripts\run_internal.ps1
 ```
-

@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "thesis-agent"
+name = "thesis-rag-assistant"
 version = "0.1.0"
-description = "Local-first thesis exploration and RAG assistant with synthetic demo assets."
+description = "Thesis paper search and RAG assistant."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

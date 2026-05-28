@@ -1,6 +1,6 @@
 ﻿<div align="center">
 
-**中文** · [English](./README.en.md)
+**中文** · [English](./README.en.md) · [技术栈](./TECH_STACK.md)
 
 # Thesis RAG Assistant
 
@@ -25,6 +25,7 @@ Thesis RAG Assistant 是一个面向个人论文资料库的检索与 RAG 问答
 - [接入自己的论文库](#接入自己的论文库)
 - [论文库配置填写示例](#论文库配置填写示例)
 - [常用命令](#常用命令)
+- [技术栈](./TECH_STACK.md)
 
 ## Demo 快速开始
 
@@ -44,7 +45,7 @@ Thesis RAG Assistant 是一个面向个人论文资料库的检索与 RAG 问答
 支持两种方式：
 
 - Ollama：使用本机或局域网中的 Ollama 服务。
-- OpenAI-compatible API：填写兼容 Chat Completions 的 base URL、model 和 API key。
+- OpenAI-compatible API：填写兼容 Chat Completions 的 base URL、model 和访问凭据。
 
 Ollama 模型示例：
 
@@ -85,7 +86,7 @@ profile name: api_llm
 provider: api
 API Base URL: [your-api-base-url]
 API Model: [your-model-name]
-API Key: [your-api-key]
+API Credential: [your-api-credential]
 temperature: 0.2
 max_tokens: 2000
 confirm: YES
@@ -95,7 +96,7 @@ confirm: YES
 | --- | --- |
 | API Base URL | 服务商提供的 OpenAI-compatible 地址 |
 | API Model | 服务商提供的模型名 |
-| API Key | 你的本地 API key，向导会隐藏输入 |
+| API Credential | 你的本地访问凭据，向导会隐藏输入 |
 | max_tokens | 单次回答的最大 token 数 |
 
 ## 接入自己的论文库

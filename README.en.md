@@ -1,6 +1,6 @@
 <div align="center">
 
-[中文](./README.md) · **English**
+[中文](./README.md) · **English** · [Tech Stack](./TECH_STACK.md)
 
 # Thesis RAG Assistant
 
@@ -25,6 +25,7 @@ Thesis RAG Assistant is a search and RAG assistant for personal thesis paper col
 - [Use Your Own Corpus](#use-your-own-corpus)
 - [Corpus Configuration Examples](#corpus-configuration-examples)
 - [Common Commands](#common-commands)
+- [Tech Stack](./TECH_STACK.md)
 
 ## Demo Quick Start
 
@@ -44,7 +45,7 @@ To enable AI answers, run the local configuration wizard:
 Supported options:
 
 - Ollama: use a local or LAN Ollama service.
-- OpenAI-compatible API: enter a Chat Completions-compatible base URL, model, and API key.
+- OpenAI-compatible API: enter a Chat Completions-compatible base URL, model, and local credential.
 
 Ollama model example:
 
@@ -85,7 +86,7 @@ profile name: api_llm
 provider: api
 API Base URL: [your-api-base-url]
 API Model: [your-model-name]
-API Key: [your-api-key]
+API Credential: [your-api-credential]
 temperature: 0.2
 max_tokens: 2000
 confirm: YES
@@ -95,7 +96,7 @@ confirm: YES
 | --- | --- |
 | API Base URL | The OpenAI-compatible endpoint from your provider |
 | API Model | The model name from your provider |
-| API Key | Your local API key; the wizard hides the input |
+| API Credential | Your local credential; the wizard hides the input |
 | max_tokens | Maximum tokens for one answer |
 
 ## Use Your Own Corpus
